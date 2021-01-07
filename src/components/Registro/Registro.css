@@ -1,0 +1,11 @@
+.register-card {
+    border: 1px solid #c8c8c8;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #000000;
+    padding: 20px 30px;
+    margin: 0 auto;
+    display: inline;
+}
+

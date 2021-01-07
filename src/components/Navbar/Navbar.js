@@ -15,11 +15,13 @@ const Navbar = () => {
                         aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className={'d-flex white-font'}>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
+                    <div className="collapse navbar-collapse white-font" id="navbarNav">
+                        <ul className={'me-auto'}></ul>
+                        <span className={'navbar-text'}>
+                            <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link to={'/login'} className={'nav-link white-font nav-hover'}>
+                                <Link to={'/login'} className={'nav-link white-font nav-hover' +
+                                ' me-3'}>
                                     Iniciar sesión
                                 </Link>
                             </li>
@@ -30,8 +32,8 @@ const Navbar = () => {
                                 </Link>
                             </li>
                         </ul>
+                        </span>
                     </div>
-                </div>
             </div>
         </nav>
     );
