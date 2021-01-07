@@ -1,0 +1,101 @@
+.header-container {
+    background-size: cover !important;
+    background: url("https://elfster.com/img/landing/hero-rudolph-1200.jpg") no-repeat center;
+    /*max-height: 200px;*/
+    text-align: center;
+}
+
+.header-text-container {
+    background: rgba(0, 0, 0, 0.21);
+    padding: 100px 0;
+}
+
+.sec-header {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.cta-button {
+    font-size: 1.825em;
+    border: 3px solid #ffffff;
+    background: #3c8678;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transform: scale(1);
+}
+
+.steps-title {
+    font-size: 1.7em;
+    font-weight: 900;
+}
+
+.steps-desc {
+    font-size: 1.2em;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.lottie-container {
+    min-height: 220px;
+}
+
+.testimonial-pic {
+    overflow: hidden;
+    text-align: center;
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.testimonial-name {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.testimonial-desc {
+    font-size: 1em;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.testimonial-container {
+    background: #000;
+}
+
+.second-cta-button {
+    font-size: 1.825em;
+    border: 3px solid #c8c8c8;
+    background: #3c8678;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #ffffff;
+}
+
+.footer {
+    background: #295346;
+    color: #ffffff;
+    font-size: 1em;
+    height: 150px;
+    padding: 15px 10px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+    .lottie-container {
+        min-height: 140px;
+    }
+
+    .footer {
+        flex-direction: column;
+
+    }
+
+    .cta-button,
+    .second-cta-button{
+        font-size: 1.2em;
+    }
+}

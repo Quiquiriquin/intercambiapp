@@ -1,3 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('./assets/fonts/Roboto-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('./assets/fonts/Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Black';
+  src: url('./assets/fonts/Roboto-Black.woff') format('woff');
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/******** Font weight **************/
+
+.light {
+  font-family: 'Roboto Light', sans-serif;
+}
+
+.bold {
+  font-family: 'Roboto Bold', sans-serif;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+/************ Background colors ***********/
+.main-green {
+  background: #397264 !important;
+}
+
+/************ Font colors *****************/
+
+.black-font {
+  color: #000000;
+}
+
+.white-font {
+  color: #ffffff !important;
+}
+
+.nav-hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.nav-hover:hover {
+  border-bottom: 2px solid #ffffff;
+}
+
+.signup-button {
+  background: #ffffff;
+  color: #3c8678 !important;
+  border-radius: 5px;
+  border: none !important;
+  font-weight: 500;
+  padding: 7px 20px !important;
+}
+
+/************ Font size *****************/
+
+.fz-24 {
+  font-size: 1.5em;
+}
+
+.text-shadow {
+  text-shadow: 3px 1px 3px #000000;
+}
+
+/***************** Hover ***************/
+.hover-pointer:hover {
+  cursor: pointer;
+}
+
+.hover-scale:hover {
+  transform: scale(1.04);
+}
+
 .App {
   text-align: center;
 }
