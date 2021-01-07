@@ -1,10 +1,7 @@
 import React from 'react';
 import './Landing.css';
 import Header from './Header';
-import Lotties from '../Generic/Lotties';
-import regalo from '../../assets/imgs/regalo.json';
 import chat from '../../assets/imgs/chat_organiza.json';
-import invita from '../../assets/imgs/invita.json';
 import Steps from './Steps';
 import MainCarousel from './MainCarousel';
 
