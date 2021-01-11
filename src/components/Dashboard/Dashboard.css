@@ -1,0 +1,26 @@
+.action-btn {
+    border-radius: 25px;
+    padding: 10px 30px;
+    border: none;
+    font-size: 1.250em;
+}
+
+.content-info-card {
+    box-shadow: 1px 1px 4px #7e7e7e;
+    border-radius: 5px;
+    padding: 12px 8px;
+}
+
+.card-text {
+    max-width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.action-sec-btn {
+    border-radius: 20px;
+    padding: 5px 20px;
+    border: none;
+    font-size: 1.250em;
+}
+

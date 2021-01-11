@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className={'header-container bold'}>
             <div className={'header-text-container white-font'}>
-                <h1 className={'text-shadow bold fw-900'}>Únete a tu familia y amigos</h1>
+                <h1 className={'text-shadow bold fw-900 white-font'}>Únete a tu familia y amigos</h1>
                 <div className={'sec-header text-shadow fz-24'}>
                     La mejor aplicación para organizar tus intercambios
                 </div>

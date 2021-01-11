@@ -91,6 +91,10 @@ body {
   font-size: 1.5em;
 }
 
+.fz-18 {
+  font-size: 1.125em;
+}
+
 .text-shadow {
   text-shadow: 3px 1px 3px #000000;
 }

@@ -27,7 +27,7 @@ const MainCarousel = () => {
 
     return (
         <div className={'container-fluid text-center pt-5 pb-5 main-green white-font'}>
-            <h2 className={'fw-700'}>Testimonios</h2>
+            <h2 className={'fw-700 white-font'}>Testimonios</h2>
             <div id="carouselExampleIndicators" className="carousel slide mt-5" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     {

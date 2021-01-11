@@ -2,9 +2,11 @@ import React from 'react';
 import Registro from './Registro';
 import { useForm } from 'react-hook-form';
 import './Registro.css';
+import {SIGNUP} from '../../Utils/Endpoints';
+import { useHistory } from 'react-router-dom';
 
 const RegistroHoc = () => {
-
+    const history = useHistory();
     const rules = {
         name: {
             required: 'Ingresa tu nombre',
@@ -24,6 +26,17 @@ const RegistroHoc = () => {
         mode: 'all',
     });
     const submitForm = async (data) => {
+        try {
+            const response = await SIGNUP(data);
+            if (response) {
+                const { data } = response;
+                if (data.usuario) {
+                    history.push('/login');
+                }
+            }
+        } catch (e) {
+            console.log(e);
+        }
         console.log(data);
     };
     return (
