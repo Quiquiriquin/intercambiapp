@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import {GeneralContext} from '../../context/GeneralContext';
 const Navbar = () => {
+
+    const { user } = useContext(GeneralContext);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light main-green">
             <div className="container-fluid white-font">
@@ -18,20 +22,33 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse white-font" id="navbarNav">
                         <ul className={'me-auto'}></ul>
                         <span className={'navbar-text'}>
-                            <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <Link to={'/login'} className={'nav-link white-font nav-hover' +
-                                ' me-3'}>
-                                    Iniciar sesión
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to={'/registro'} className={'nav-link white-font' +
-                                ' signup-button'}>
-                                    Registrarme
-                                </Link>
-                            </li>
-                        </ul>
+                            {
+                                !user ?
+                                    <ul className="navbar-nav">
+                                        <li className="nav-item">
+                                            <Link to={'/login'} className={'nav-link white-font nav-hover' +
+                                            ' me-3'}>
+                                                Iniciar sesión
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to={'/registro'} className={'nav-link white-font' +
+                                            ' signup-button'}>
+                                                Registrarme
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                  :
+                                      <ul className="navbar-nav">
+                                          <li className="nav-item">
+                                              <Link to={'/login'} className={'nav-link white-font nav-hover' +
+                                              ' me-3'}>
+                                                  Cerrar sesión
+                                              </Link>
+                                          </li>
+                                      </ul>
+
+                            }
                         </span>
                     </div>
             </div>

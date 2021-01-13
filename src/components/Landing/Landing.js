@@ -1,7 +1,7 @@
 import React from 'react';
 import './Landing.css';
 import Header from './Header';
-import chat from '../../assets/imgs/chat_organiza.json';
+import chat from '../../assets/imgs/lotties/chat_organiza.json';
 import Steps from './Steps';
 import MainCarousel from './MainCarousel';
 

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import './Registro.css';
 import {SIGNUP} from '../../Utils/Endpoints';
 import { useHistory } from 'react-router-dom';
+import {toast} from 'react-toastify';
 
 const RegistroHoc = () => {
     const history = useHistory();
@@ -28,11 +29,18 @@ const RegistroHoc = () => {
     const submitForm = async (data) => {
         try {
             const response = await SIGNUP(data);
-            if (response) {
+            if (response && response.status === 200) {
                 const { data } = response;
                 if (data.usuario) {
+                    toast.success('Registro exitoso', {
+                        autoClose: 3000
+                    });
                     history.push('/login');
                 }
+            } else {
+                toast.error('Error al registrar. Intenta nuevamente.', {
+                    autoClose: 3000
+                });
             }
         } catch (e) {
             console.log(e);

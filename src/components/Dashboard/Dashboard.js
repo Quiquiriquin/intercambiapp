@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {GeneralContext} from '../../context/GeneralContext';
 import Lotties from '../Generic/Lotties';
-import thinking from '../../assets/imgs/thinking';
+import thinking from '../../assets/imgs/lotties/thinking.json';
 import DashboardCard from './DashboardCard';
 
 const Dashboard = ({ cards }) => {

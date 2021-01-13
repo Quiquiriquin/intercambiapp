@@ -1,8 +1,8 @@
 import React from 'react';
 import Lotties from '../Generic/Lotties';
-import chat from '../../assets/imgs/chat_organiza';
-import invita from '../../assets/imgs/invita';
-import regalo from '../../assets/imgs/regalo';
+import chat from '../../assets/imgs/lotties/chat_organiza.json';
+import invita from '../../assets/imgs/lotties/invita.json';
+import regalo from '../../assets/imgs/lotties/regalo.json';
 
 const Steps = () => {
     return (

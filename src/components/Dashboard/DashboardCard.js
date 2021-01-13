@@ -1,6 +1,5 @@
 import React from 'react';
 import Lotties from '../Generic/Lotties';
-import thinking from '../../assets/imgs/thinking';
 
 const DashboardCard = ({ title, animation, button, text }) => {
   return (

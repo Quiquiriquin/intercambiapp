@@ -150,3 +150,14 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.loading-container {
+  background: rgba(0, 0, 0, 0.16);
+  z-index: 10000;
+  position: absolute;
+  height: 90vh;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
