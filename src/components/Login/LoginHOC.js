@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Login from './Login';
 import {useForm} from 'react-hook-form';
 import {LOGIN} from '../../Utils/Endpoints';
@@ -18,6 +18,13 @@ const LoginHoc = () => {
         }
     };
 
+    useEffect(() => {
+        if (localStorage.getItem('user')) {
+            updateUser(JSON.parse(localStorage.getItem('user')));
+            history.push('/dashboard');
+        }
+    });
+
     const { handleSubmit, control, errors, formState: { isValid } } = useForm({
         mode: 'all',
     });
@@ -29,6 +36,8 @@ const LoginHoc = () => {
                 const { data } = response;
                 if (data.usuario) {
                     localStorage.setItem('user', JSON.stringify(data.usuario));
+                    sessionStorage.setItem('authorization', data.token);
+                    sessionStorage.setItem('x-refresh-token', data.refreshToken);
                     updateUser(data.usuario);
                     history.push('/dashboard');
                     console.log('Hay sesión');
@@ -39,7 +48,7 @@ const LoginHoc = () => {
             updateLoading(false);
         } catch (e) {
             console.log(e);
-            updateLoading(true);
+            updateLoading(false);
         }
     };
     return (

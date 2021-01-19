@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 @font-face {
-  font-family: 'Roboto Light';
-  src: url('./assets/fonts/Roboto-Light.woff') format('woff');
+  font-family: 'Lato Light';
+  src: url('./assets/fonts/Lato-Light.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Regular';
-  src: url('./assets/fonts/Roboto-Regular.woff') format('woff');
+  font-family: 'Lato Regular';
+  src: url('./assets/fonts/Lato-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Black';
-  src: url('./assets/fonts/Roboto-Black.woff') format('woff');
+  font-family: 'Lato Black';
+  src: url('./assets/fonts/Lato-Black.woff') format('woff');
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
+*, body {
+  font-family: 'Lato Regular', sans-serif;
 }
 
 .full-height {
@@ -47,7 +47,7 @@ body {
 
 /************ Background colors ***********/
 .main-green {
-  background: #397264 !important;
+  background: teal !important;
 }
 
 .gray-bg {
@@ -66,6 +66,10 @@ body {
 
 .white-font {
   color: #ffffff !important;
+}
+
+.gray-font {
+  color: #6c6c6c;
 }
 
 .nav-hover {
@@ -87,12 +91,24 @@ body {
 
 /************ Font size *****************/
 
+.fz-32 {
+  font-size: 2em;
+}
+
+.fz-28 {
+  font-size: 1.75em;
+}
+
+.fz-20 {
+  font-size: 1.25em;
+}
+
 .fz-24 {
   font-size: 1.5em;
 }
 
 .fz-18 {
-  font-size: 1.125em;
+  font-size: 1.125em !important;
 }
 
 .text-shadow {

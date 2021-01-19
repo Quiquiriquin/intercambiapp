@@ -1,0 +1,49 @@
+.step-class-input {
+    border-radius: 7px;
+    margin-top: 5px;
+}
+
+.main-input-label {
+    font-size: 1.5em;
+    font-family: 'Lato Bold', sans-serif;
+}
+
+.sec-input-label {
+    font-family: 'Lato Bold', sans-serif;
+    margin-bottom: -100px;
+    padding-left: 10px;
+}
+
+.step-class-input.label-contain {
+    padding-top: 25px;
+    margin-top: -25px;
+    z-index: 0;
+    background: none;
+}
+
+.form-container {
+    max-width: 50%;
+}
+
+.view-button {
+    padding: 0 15px;
+    border-radius: 15px;
+    border-color: teal;
+}
+
+.name-circle {
+    background: teal;
+    padding: 4px;
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-right: 15px;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 468px){
+    .form-container {
+        max-width: 100%;
+    }
+}

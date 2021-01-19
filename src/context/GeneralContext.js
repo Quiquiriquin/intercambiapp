@@ -6,7 +6,7 @@ let { Provider, Consumer } = GeneralContext;
 function GeneralProvider({ children }) {
 
   let [user, setUserInfo] = useState(null);
-  let [loading, setLoading] = useState(true);
+  let [loading, setLoading] = useState(false);
 
   const updateUser = (value) => {
     setUserInfo(value);

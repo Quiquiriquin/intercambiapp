@@ -26,7 +26,7 @@ const Login = ({ handleSubmit, submitFunction, control, rules, errors, isValid }
                             rules={rules.password}
                             name={'password'}
                             label={'Contraseña'}
-                            type={true}
+                            type={'password'}
                             placeholder={'Tu contraseña...'}
                         />
                         <div className={'mt-4'}>

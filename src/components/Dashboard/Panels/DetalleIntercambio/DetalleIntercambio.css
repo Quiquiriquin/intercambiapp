@@ -1,0 +1,14 @@
+.detail-container {
+    margin-bottom: 15px;
+}
+
+.data-label {
+    color: #6c6c6c;
+    font-size: 1em;
+    margin-bottom: -5px;
+}
+
+.data-value {
+    color: #000000;
+    font-size: 1.375em;
+}

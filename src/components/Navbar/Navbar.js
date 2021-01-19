@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import {GeneralContext} from '../../context/GeneralContext';
 const Navbar = () => {
 
-    const { user } = useContext(GeneralContext);
+    const { user, updateUser } = useContext(GeneralContext);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light main-green">
@@ -41,7 +41,9 @@ const Navbar = () => {
                                   :
                                       <ul className="navbar-nav">
                                           <li className="nav-item">
-                                              <Link to={'/login'} className={'nav-link white-font nav-hover' +
+                                              <Link to={'/'} onClick={() => { localStorage.clear(); sessionStorage.clear(); updateUser(null) }} className={'nav-link' +
+                                              ' white-font' +
+                                              ' nav-hover' +
                                               ' me-3'}>
                                                   Cerrar sesión
                                               </Link>
