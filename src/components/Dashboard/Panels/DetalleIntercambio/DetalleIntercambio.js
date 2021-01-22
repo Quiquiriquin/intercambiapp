@@ -110,10 +110,10 @@ const DetalleIntercambio = ({ exchange, resume, deleteFunction, pairs, invite })
                 Parejas de intercambio
               </div>
               {
-                !pairs || pairs.length === 0 && 'Aún no se han creado las parejas para el' +
+                (!pairs || pairs.length === 0) && 'Aún no se han creado las parejas para el' +
                 ' intercambio'
               }
-              { pairs && pairs.length > 0 && <div className={'row gx-5 data-label fz-18 mb-1'}>
+              { (pairs && pairs.length > 0) && <div className={'row gx-5 data-label fz-18 mb-1'}>
                 <div className={'col-6'}>
                   De
                 </div>

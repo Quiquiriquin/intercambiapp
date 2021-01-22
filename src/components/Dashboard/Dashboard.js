@@ -1,7 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import {GeneralContext} from '../../context/GeneralContext';
-import Lotties from '../Generic/Lotties';
-import thinking from '../../assets/imgs/lotties/thinking.json';
 import DashboardCard from './DashboardCard';
 import {useHistory} from 'react-router-dom';
 

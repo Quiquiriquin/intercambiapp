@@ -54,7 +54,7 @@ const IntercambioHoc = () => {
       const emails = [];
       const { pastFriends, ...users } = data;
       console.log(users);
-      Object.keys(users).map((elem, index) => {
+      Object.keys(users).forEach((elem, index) => {
         if (elem !== 'pastFriends') {
           if (elem.includes('name')) {
             names.push(data[elem]);

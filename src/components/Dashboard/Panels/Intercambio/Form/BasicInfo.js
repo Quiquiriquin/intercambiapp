@@ -4,8 +4,7 @@ import { Select, Button } from 'antd';
 
 const Option = Select.Option;
 
-const BasicInfo = ({ errors, navigation, children, control, handleSubmit, submitForm }) => {
-  const { next } = navigation;
+const BasicInfo = ({ errors, children, control,}) => {
   console.log(control);
   return (
     <div className={'container-fluid mt-4 black-font pb-4 form-container'}>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';

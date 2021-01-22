@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
 import DetalleIntercambio from '../../DetalleIntercambio/DetalleIntercambio';
 
-const Resume = ({ navigation, exchangeInfo, invites }) => {
-  const { go } = navigation;
-  const [exchange, setEchange] = useState(null)
+const Resume = ({ exchangeInfo, invites }) => {
+  const [exchange, setEchange] = useState(null);
 
   console.log(exchangeInfo);
   console.log(invites);
@@ -36,10 +35,6 @@ const Resume = ({ navigation, exchangeInfo, invites }) => {
       console.log('No hay, hay que construir el objeto');
     }
   }, [exchange]);
-
-  const createExchange = () => {
-    // console.log(formData);
-  };
 
   return (
     <div className={'container-fluid'}>

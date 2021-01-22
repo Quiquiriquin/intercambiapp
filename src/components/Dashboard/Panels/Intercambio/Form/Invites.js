@@ -5,10 +5,9 @@ import { UserAddOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 
-const Invites = ({ navigation, children, control, errors, friends }) => {
+const Invites = ({ control, errors, friends }) => {
 
   const [inputs, setInputs] = useState([{ name: '', email: '' }]);
-  const { next } = navigation;
 
   const addInput = async () => {
     setInputs((prev) => [...prev, { name: '', email: '' }])
