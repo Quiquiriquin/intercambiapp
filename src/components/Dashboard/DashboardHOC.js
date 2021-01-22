@@ -7,7 +7,7 @@ import invite from '../../assets/imgs/lotties/invite-sec.json';
 import wish from '../../assets/imgs/lotties/wish.json';
 import './Dashboard.css';
 import {toast} from 'react-toastify';
-import {EXCHANGES, FRIENDS} from '../../Utils/Endpoints';
+import {DELETE_EXCHANGE, EXCHANGES, FRIENDS} from '../../Utils/Endpoints';
 
 const DashboardHoc = () => {
   const { user, updateLoading } = useContext(GeneralContext);
@@ -58,7 +58,7 @@ const DashboardHoc = () => {
       getExchanges();
     }
 
-    if(exchanges && !friends) {
+    if((exchanges && !friends)) {
       updateLoading(true);
       getFriends();
     }
@@ -89,14 +89,15 @@ const DashboardHoc = () => {
       buttonTitle: 'Seleccionar',
       linkButton: 'nuevo/intercambio',
     },
-  ]
+  ];
 
   return (
     <Dashboard
-      friends={friends}
-      categories={categories}
-      exchanges={exchanges}
+      friends={friends && friends.length > 0 ? friends : null}
+      categories={categories && categories.length > 0 ? categories : null}
+      exchanges={exchanges && exchanges.length > 0 ? exchanges : null}
       cards={cards}
+
     />
   );
 };

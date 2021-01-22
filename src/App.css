@@ -177,3 +177,10 @@
   align-content: center;
   align-items: center;
 }
+
+
+.text-ellipsis {
+  flex-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

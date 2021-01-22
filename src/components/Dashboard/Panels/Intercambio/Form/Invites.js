@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import GenericInput from '../../../../Generic/GenericInput';
-import {Button} from 'antd';
+import {Button, Select} from 'antd';
 import { UserAddOutlined } from '@ant-design/icons';
 
+const { Option } = Select;
 
-const Invites = ({ navigation, children, control, errors }) => {
+const Invites = ({ navigation, children, control, errors, friends }) => {
 
   const [inputs, setInputs] = useState([{ name: '', email: '' }]);
   const { next } = navigation;
@@ -22,7 +23,32 @@ const Invites = ({ navigation, children, control, errors }) => {
         Ya tenemos casi todo preparado para tu intercambio. ¡Solo faltan tus amigos! <br /> Añade su dirección de correo electrónico y nombre para que puedan participar.
       </div>
       <div className={''}>
+        <GenericInput
+          control={control}
+          name={'pastFriends'}
+          type={'select'}
+          placeholder={'Selecciona...'}
+          labelClass={'main-input-label'}
+          customClass={'step-class-input w-100'}
+          label={'Invita a tus ammigos ya registrados'}
+          errors={errors}
+          children={
+            friends ?
+              friends.map((option, index) => (
+                <Option value={option.email} key={index}>
+                  <div className={''}>
+                    { option.name }
+                  </div>
+                  <div className={'select-email'}>
+                    { option.email }
+                  </div>
+                </Option>
+              ))
+              : []
+          }
+        />
           <div className={'row'}>
+
               {
                 inputs.map((input, index) => (
                   <div className={'col-12'} key={index}>

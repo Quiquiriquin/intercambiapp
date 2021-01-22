@@ -26,6 +26,13 @@ const Navbar = () => {
                                 !user ?
                                     <ul className="navbar-nav">
                                         <li className="nav-item">
+                                            <Link to={'/invitaciones'} className={'nav-link' +
+                                            ' white-font nav-hover' +
+                                            ' me-3'}>
+                                                Invitaciones
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
                                             <Link to={'/login'} className={'nav-link white-font nav-hover' +
                                             ' me-3'}>
                                                 Iniciar sesión
@@ -41,7 +48,14 @@ const Navbar = () => {
                                   :
                                       <ul className="navbar-nav">
                                           <li className="nav-item">
-                                              <Link to={'/'} onClick={() => { localStorage.clear(); sessionStorage.clear(); updateUser(null) }} className={'nav-link' +
+                                              <Link to={'/invitaciones'} className={'nav-link' +
+                                              ' white-font nav-hover' +
+                                              ' me-3'}>
+                                                  Invitaciones
+                                              </Link>
+                                          </li>
+                                          <li className="nav-item">
+                                              <Link to={'/'} onClick={() => { localStorage.clear(); sessionStorage.clear(); updateUser(null); window.location.reload() }} className={'nav-link' +
                                               ' white-font' +
                                               ' nav-hover' +
                                               ' me-3'}>

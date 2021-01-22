@@ -34,6 +34,7 @@ const LoginHoc = () => {
             const response = await LOGIN(data);
             if (response && response.status === 200) {
                 const { data } = response;
+                console.log(data);
                 if (data.usuario) {
                     localStorage.setItem('user', JSON.stringify(data.usuario));
                     sessionStorage.setItem('authorization', data.token);
@@ -47,6 +48,7 @@ const LoginHoc = () => {
             }
             updateLoading(false);
         } catch (e) {
+            toast.error('Ocurrió un error al iniciar sesión');
             console.log(e);
             updateLoading(false);
         }

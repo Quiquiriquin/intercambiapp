@@ -15,6 +15,7 @@ import { useHistory } from 'react-router-dom';
 import IntercambioHoc from './components/Dashboard/Panels/Intercambio/IntercambioHOC';
 import DetalleIntercambioHoc
   from './components/Dashboard/Panels/DetalleIntercambio/DetalleIntercambioHOC';
+import InvitacionesHoc from './components/Invitaciones/InvitacionesHOC';
 
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
           <Route path={'/dashboard'} exact component={DashboardHoc}/>
           <Route path={'/dashboard/nuevo/intercambio'} exact component={IntercambioHoc}/>
           <Route path={'/dashboard/intercambio/:id'} exact component={DetalleIntercambioHoc}/>
+          <Route path={'/invitaciones'} exact component={InvitacionesHoc}/>
           <Route path={'/'} exact={true}>
             { localStorage.getItem('user') ? <Redirect to={'/dashboard'}/> : <Landing /> }
           </Route>

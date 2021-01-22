@@ -13,7 +13,7 @@ const DashboardCard = ({ title, animation, button, text, linkButton, content, fr
           { title }
         </div>
         {
-          (!content && !friends && !categories) &&
+          ((!content && !friends && !categories)) &&
             <div className={'mt-2'}>
               <Lotties
                 animationData={animation}
@@ -34,58 +34,72 @@ const DashboardCard = ({ title, animation, button, text, linkButton, content, fr
         }
         {
           (content && content.length) > 0 &&
-            content.map((elem, index) => (
-              <div key={index} className={'mt-2 d-flex justify-content-between'}>
-                <div className={'fz-18'}>
-                  { elem.name }
-                </div>
-                <div className={''}>
-                  <Button onClick={() => history.push(`/dashboard/intercambio/${elem.id}`)} size={'small'} className={'text-white' +
-                  ' main-green' +
-                  ' view-button'}>
-                    Ver
-                  </Button>
-                </div>
-              </div>
-            ))
+            <div className={'pb-2'} style={{ maxHeight: '300px', overflow: 'auto', }}>
+              {
+                content.map((elem, index) => (
+                  <div key={index} className={'mt-2 d-flex justify-content-between'}>
+                    <div className={'fz-18'}>
+                      { elem.name }
+                    </div>
+                    <div className={''}>
+                      <Button onClick={() => history.push(`/dashboard/intercambio/${elem.id}`)} size={'small'} className={'text-white' +
+                      ' main-green' +
+                      ' view-button'}>
+                        Ver
+                      </Button>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+
         }
+
         {
           (friends && friends.length > 0) &&
-            friends.map((friend, index) => (
-              <div key={index} className={'mt-2 d-flex'}>
-                <div className={'name-circle'}>
-                  { friend.name.slice(0, 2) }
+          <div className={'pb-2'} style={{ maxHeight: '300px', overflow: 'auto', }}>
+            {
+              friends.map((friend, index) => (
+                <div key={index} className={'mt-2 d-flex'}>
+                  <div className={'name-circle'}>
+                    {friend.name.slice(0, 2)}
+                  </div>
+                  <div className={'fz-18'}>
+                    {friend.name}
+                  </div>
+                  {/*<div className={''}>*/}
+                  {/*  <Button onClick={() => console.log(elem.id)} size={'small'} className={'text-white' +*/}
+                  {/*  ' main-green' +*/}
+                  {/*  ' view-button'}>*/}
+                  {/*    Ver*/}
+                  {/*  </Button>*/}
+                  {/*</div>*/}
                 </div>
-                <div className={'fz-18'}>
-                  { friend.name }
-                </div>
-                {/*<div className={''}>*/}
-                {/*  <Button onClick={() => console.log(elem.id)} size={'small'} className={'text-white' +*/}
-                {/*  ' main-green' +*/}
-                {/*  ' view-button'}>*/}
-                {/*    Ver*/}
-                {/*  </Button>*/}
-                {/*</div>*/}
-              </div>
-            ))
+              ))
+            }
+          </div>
         }
 
         {
           (categories && categories.length > 0) &&
-          categories.map((cat, index) => (
-            <div key={index} className={'mt-2 d-flex'}>
-              <div className={'fz-18'}>
-                { cat }
-              </div>
-              {/*<div className={''}>*/}
-              {/*  <Button onClick={() => console.log(elem.id)} size={'small'} className={'text-white' +*/}
-              {/*  ' main-green' +*/}
-              {/*  ' view-button'}>*/}
-              {/*    Ver*/}
-              {/*  </Button>*/}
-              {/*</div>*/}
-            </div>
-          ))
+          <div className={'pb-2'} style={{ maxHeight: '300px', overflow: 'auto', }}>
+            {
+              categories.map((cat, index) => (
+                <div key={index} className={'mt-2 d-flex'}>
+                  <div className={'fz-18'}>
+                    { cat }
+                  </div>
+                  {/*<div className={''}>*/}
+                  {/*  <Button onClick={() => console.log(elem.id)} size={'small'} className={'text-white' +*/}
+                  {/*  ' main-green' +*/}
+                  {/*  ' view-button'}>*/}
+                  {/*    Ver*/}
+                  {/*  </Button>*/}
+                  {/*</div>*/}
+                </div>
+              ))
+            }
+          </div>
         }
       </div>
     </div>

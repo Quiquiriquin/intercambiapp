@@ -3,13 +3,13 @@ import Intercambio from './Intercambio';
 import './Intercambio.css';
 import {useStep} from 'react-hooks-helper';
 import {useForm} from 'react-hook-form';
-import {CATEGORIES, NEW_EXCHANGE} from '../../../../Utils/Endpoints';
+import {CATEGORIES, FRIENDS, NEW_EXCHANGE} from '../../../../Utils/Endpoints';
 import {toast} from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import {GeneralContext} from '../../../../context/GeneralContext';
 
 const IntercambioHoc = () => {
-  const { updateLoading } = useContext(GeneralContext);
+  const { updateLoading, user } = useContext(GeneralContext);
   const history = useHistory();
   const steps = [
     { id: 'Basics' },
@@ -17,6 +17,7 @@ const IntercambioHoc = () => {
     { id: 'Review' },
   ];
   const [exchangeInfo, setExchangeInfo] = useState(null);
+  const [friends, setFriends] = useState(null);
   const [invites, setInvites] = useState(null);
   const { step, navigation } = useStep({ initialStep: 0, steps });
   const { id } = step;
@@ -51,14 +52,25 @@ const IntercambioHoc = () => {
     if (id === 'Invites') {
       const names = [];
       const emails = [];
-      Object.keys(data).map((elem, index) => {
-        if (elem.includes('name')) {
-          names.push(data[elem]);
-        }
-        if (elem.includes('email')) {
-          emails.push(data[elem]);
+      const { pastFriends, ...users } = data;
+      console.log(users);
+      Object.keys(users).map((elem, index) => {
+        if (elem !== 'pastFriends') {
+          if (elem.includes('name')) {
+            names.push(data[elem]);
+          }
+          if (elem.includes('email')) {
+            emails.push(data[elem]);
+          }
         }
       });
+      if (pastFriends) {
+        pastFriends.forEach((elem) => {
+          const index = friends.findIndex((element) => element.email === elem);
+          names.push(friends[index].name);
+          emails.push(friends[index].email);
+        });
+      }
       setInvites({
         names, emails,
       });
@@ -86,10 +98,30 @@ const IntercambioHoc = () => {
 
   };
 
+  useEffect(() => {
+    const getFriends = async () => {
+      try {
+        // const ids = exchanges.map((elem) => elem.idUser);
+        const { data } = await FRIENDS(user.id);
+        setFriends(data.invitations);
+        //setCategories(data.categories);
+        updateLoading(false);
+      } catch (e) {
+        console.log(e);
+        updateLoading(false);
+        toast.error('Error al obtener tus intercambios. Intenta de nuevo.');
+      }
+    };
+    if (friends === null) {
+      updateLoading(true);
+      getFriends();
+    }
+  }, [friends]);
+
   const inputProps = { navigation, children: options, control, errors};
   const generalProps = { handleSubmit, id, submitForm: onSubmitForm };
   return (
-    <Intercambio infoProps={{ exchangeInfo, invites }} generalProps={generalProps} inputProps={inputProps}/>
+    <Intercambio infoProps={{ exchangeInfo, invites }} generalProps={generalProps} inputProps={inputProps} friends={friends}/>
   );
 };
 

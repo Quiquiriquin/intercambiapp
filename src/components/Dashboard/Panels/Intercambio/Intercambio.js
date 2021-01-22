@@ -7,7 +7,7 @@ import Invites from './Form/Invites';
 import Resume from './Form/Resume';
 import { useForm } from 'react-hook-form';
 
-const Intercambio = ({ generalProps: { handleSubmit, id, submitForm }, inputProps, infoProps }) => {
+const Intercambio = ({ generalProps: { handleSubmit, id, submitForm }, inputProps, infoProps, friends }) => {
   // const [formData, setForm] = useForm({
   //   name: '',
   //   date: '',
@@ -25,7 +25,7 @@ const Intercambio = ({ generalProps: { handleSubmit, id, submitForm }, inputProp
         }
         {
           id === 'Invites' &&
-            <Invites {...inputProps} />
+            <Invites {...inputProps} friends={friends} />
         }
         {
           id === 'Review' &&
