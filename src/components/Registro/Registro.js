@@ -1,5 +1,4 @@
 import React from 'react';
-import {Input} from 'antd';
 import GenericInput from '../Generic/GenericInput';
 
 const Registro = ({ handleSubmit, submitFunction, control, rules, errors, isValid }) => {
